@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cannabis Hercules</title>
+  <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
   <style>
     body { 
       font-family: sans-serif; 
@@ -11,7 +12,7 @@
       margin: 0 auto; 
       padding: 2rem; 
       line-height: 1.6; 
-      background: linear-gradient(to right, rgb(70, 94, 53) 0%, rgb(95, 128, 94) 50%, rgb(70, 94, 53) 100%); 
+      background: linear-gradient(to right, rgb(70, 94, 53) 0%, rgb(95, 128, 94) 50%, rgb(70, 94, 53) 100%);
     }
     h1, h2 { 
       margin-bottom: 0.5rem; 
@@ -19,39 +20,72 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.4);
     }
     .product-list { display: block; }
-    .product { border: 1px solid #ccc; padding: 1rem; border-radius: 8px; }
+    .product {
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(to bottom right, rgba(255,255,255,0.7), rgba(255,100,100,0.1));
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .product:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+    .price {
+      margin-top: 0.8rem;
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      border: 1px solid #000;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.05);
+    }
     .bio { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ccc; }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
-  <style>
+
     .language-button {
       background: rgba(36, 97, 171, 0.8);
-  border: 2px solid #4a7c4a;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  margin: 0 auto 1rem auto;
-  transition: background 0.3s, transform 0.2s;
+      border: 2px solid #4a7c4a;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      margin: 0 auto 1rem auto;
+      transition: background 0.3s, transform 0.2s;
     }
-    .language-button img {
-      width: 20px;
-      height: 20px;
-    }
+    .language-button img { width: 20px; height: 20px; }
     .language-button:hover {
       background: rgba(74, 124, 74, 0.4);
       transform: translateY(-2px);
     }
+
+    @media (max-width: 600px) {
+      .product {
+        padding: 0.8rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      }
+      .product h3 { font-size: 1.1rem; }
+      .product p { font-size: 0.95rem; }
+      .product .price { font-size: 1rem; padding: 0.2rem 0.5rem; }
+      img { max-width: 100%; height: auto; }
+    }
   </style>
 </head>
 <body>
+<div style="display:flex; justify-content:center; align-items:center; gap:1rem; margin-bottom:1rem;">
+  <img src="logo_min.png" alt="Icon" style="width:200px; height:200px;">
+</div>
 
 <button class="language-button" onclick="window.location.href='index.html'">
   <img src="greek.png" alt="Greek">
   Ελληνικά
 </button>
+<div style="display:flex; justify-content:center; align-items:center; gap:1rem; margin-bottom:1rem;">
+  <img src="cannabis-icon.png" alt="Icon" style="width:40px; height:40px;">
 
 <h1 style="
   text-align: center;
@@ -64,57 +98,114 @@
   line-height: 1.2;
 ">
   CANNABIS HERCULES <br>Organic Cannabis Products
-</h1>
+</h1>  
+<img src="cannabis-icon.png" alt="Icon" style="width:40px; height:40px;">
+</div>
 
-<img src="logo-bg.jpg" alt="Logo" style="width:480px; display:block; margin:0 auto 1rem auto;" />
+<img src="logo-bg.jpg" alt="Logo" style="width:100%; max-width:480px; display:block; margin:0 auto 1rem auto;" />
 <p style="text-align:center;">Naturally grown, pure, rich in CBD.</p>
 
-<h2>Products</h2>
+<h2>Our Products</h2>
 <div class="product-list">
-  <div class="product" style="margin-bottom:2rem;">
-    <img src="trima.jpg" alt="Product 1" style="width:100%; border-radius:6px;" />
-    <h3>Product 1</h3>
-    <p>Product description.</p>
+  <div class="product">
+    <img src="trima.png" alt="Product 1" style="width:100%; border-radius:6px;" />
+    <h3>Dried Flower Trim 30g – Enectarol, Dioika88, Futura86</h3>
+    <p class="price">Price: 10€</p>
+    <p>Dry flower trim 30 g from Enectarol, Dioika88, and Futura86 varieties. A mix of earthy aromas and gentle herbal strength, cut for those who want clean raw material — just aroma, texture, and calm alignment it brings.</p>
   </div>
-  <div class="product" style="margin-bottom:2rem;">
+  <div class="product">
     <img src="product2.jpg" alt="Product 2" style="width:100%; border-radius:6px;" />
-    <h3>Product 2</h3>
-    <p>Product description.</p>
+    <h3>90 Spirulina & Cannabis Tablets 30g</h3>
+    <p class="price">Price: 10€</p>
+    <p>Small green wellness bullets: 90 spirulina tablets enriched with cannabis, total 30 g. A concentrated dose of plant power, rich in nutrients, crafted for moments when you want something pure and essential for your body.</p>
   </div>
-  <div class="product" style="margin-bottom:2rem;">
+  <div class="product">
     <img src="product3.jpg" alt="Product 3" style="width:100%; border-radius:6px;" />
-    <h3>Product 3</h3>
-    <p>Product description.</p>
+    <h3>Cannabis Tincture 100ml – 5% CBD</h3>
+    <p class="price">Price: 5€</p>
+    <p>A small bottle of calm: 100 ml cannabis tincture with 5% CBD. Clear extract that drips slowly, perfect for moments you want to lower the noise and let your body find its rhythm again.</p>
   </div>
-  <div class="product" style="margin-bottom:2rem;">
+  <div class="product">
     <img src="product4.jpg" alt="Product 4" style="width:100%; border-radius:6px;" />
-    <h3>Product 4</h3>
-    <p>Product description.</p>
+    <h3>Cannabis Balm 30g</h3>
+    <p class="price">Price: 5€</p>
+    <p>A small handful of relief: 30 g cannabis balm, rich and gentle to the touch, made for skin that thirsts. Melts slowly with body heat, leaving a subtle, herbal warmth that softens dry skin and restores elasticity.</p>
   </div>
 </div>
 
 <div class="bio">
   <h2>About Me</h2>
-  <p>I cultivate medicinal Sativa cannabis of the Futura variety using natural methods without chemicals on a small farm in Iraklia Serres near Lake Kerkini. Collaborating with agronomists and specialized institutes, I produce high-purity cannabis tea, rich in CBD and nutrients, free from heavy metals and harmful substances. With love and care, I harvest and process flowers and seeds, creating a safe and enjoyable product that provides relaxation, immune support, and overall wellness.</p>
+  <p>We cultivate medicinal Sativa cannabis of the Futura variety using natural methods without chemicals on a small farm in Iraklia Serres near Lake Kerkini. Collaborating with agronomists and specialized institutes, we produce high-purity cannabis tea, rich in CBD and nutrients, free from heavy metals and harmful substances. With love and care, we harvest and process flowers and seeds, creating a safe and enjoyable product that provides relaxation, immune support, and overall wellness.</p>
 </div>
 
-<h2 style="margin-top:2rem;">Where to Find Me</h2>
-<p style="text-align:center;">
-  <img src="location_icon.png" alt="Location" style="width:20px; vertical-align:middle; margin-right:5px;">
-  Iraklia Serres, P.C. 62 400<br>
+<h2 style="margin-top:2rem;">Where to Find Us</h2>
+<div style="
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(255,255,255,0.1);
+">
+  <img src="location_icon.png" alt="Location" style="width:20px; height:20px;">
+  <span>Iraklia Serres, P.C. 62 400</span>
 
-  <img src="telephone_icon.png" alt="Telephone" style="width:20px; vertical-align:middle; margin-right:5px;">
-  Phone: 6999 062 000<br>
+  <img src="telephone_icon.png" alt="Phone" style="width:20px; height:20px;">
+  <span>Phone: (+30) 6999 062 000</span>
 
-  <img src="email_icon.png" alt="Email" style="width:20px; vertical-align:middle; margin-right:5px;">
-  Email: info@katsavakis.gr
-</p>
+  <img src="email_icon.png" alt="Email" style="width:20px; height:20px;">
+  <span>Email: info@katsavakis.gr</span>
+
+  <img src="insta.png" alt="Instagram" style="width:20px; height:20px;">
+  <a href="https://www.instagram.com/rastaja69/" target="_blank" style="color:black; text-decoration:none;">@rastaja69</a>
+</div>
+<div style="display:flex; justify-content:center; margin:0 auto;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187.6804507966435!2d23.282208676090917!3d41.1806271585236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a99b283ea98db3%3A0xdfb787c09f33e0bc!2zzprOkc6kzqPOkc6SzpHOms6XzqMgzpnOkc6azqnOks6fzqM!5e0!3m2!1sel!2sgr!4v1764417041818!5m2!1sel!2sgr" 
+width="430" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 
 <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ccc;">
-  <h2>IRIS Payments</h2>
-  <p>IBAN: GR00 0000 0000 0000 0000 0000 000<br>
-  Bank: Mock Bank<br>
-  Account Holder: Cannabis Hercules</p>
+<h2>Orders and Shipping</h2>
+<p>For orders, please contact us by phone or email.<br>
+Payment methods:<br> 
+<li>Cash on Delivery (extra charge €2)
+<li>IRIS Payment (no extra charge)
+<br><br>
+Shipping options:</p>
+<li>Courier service throughout Greece (extra charge €5)
+<li>Option for shipping via ELTA to other EU countries (extra charge €20)
+</div>
+<br>
+
+
+<div style=" padding-top:2rem; border-top:1px solid #ccc;">
+
+<div style="
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  border: 2px solid black; /* μαύρο outline */
+  border-radius: 8px;      /* στρογγυλεμένες γωνίες */
+  padding: 1rem;           /* εσωτερικό κενό */
+  background: rgba(255,255,255,0.1); /* ημιδιάφανο background για αντίθεση */
+">
+
+    <img src="iris-icon.png" alt="IRIS Payments" style="width:100px; height:50px;">
+<p>IBAN: GR00 0000 0000 0000 0000 0000 000<br>
+Bank: Mock Bank<br>
+Account Holder: Cannabis Hercules</p>
+</div>
 </div>
 
 </body>
