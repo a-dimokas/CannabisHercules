@@ -39,22 +39,48 @@
 }
 
     .product { border: 1px solid #ccc; padding: 1rem; border-radius: 8px; }
-    .bio { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ccc; }.product .price {
+    .bio { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ccc; }
+	
+	
+.product .price {
   margin-top: 0.8rem;
   display: inline-block;
-  padding: 0.3rem 0.8rem;
-  font-weight: 600;
-  font-size: 1.05rem;
-  border: 1px solid #000;
-  border-radius: 6px;
-  background: rgba(0,0,0,0.05);
+  padding: 0.35rem 0.9rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 17px;
+
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#a4b0a5, #697d6b) padding-box,
+    linear-gradient(90deg, #ff0000, #ffff00, #009e00) border-box;
+
+  box-shadow: 0 0 6px rgba(0,0,0,0.9);
+
+  /* A touch of attitude */
+  color: #0c2005;
+  letter-spacing: 0.5px;
 }
+
+.thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.thumbs img {
+  max-width: 50%;
+  max-height: 500px;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
   </style>
 </head>
 <body>
 
+<link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+
 <style>
 .language-button {
   background: rgba(36, 97, 171, 0.8);
@@ -80,10 +106,33 @@
 }
 </style>
 
+<div style="
+  width: 100%;
+  background: rgba(120,0,0,0.85);
+  color: #fff;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+">
+  Η ιστοσελίδα απευθύνεται αποκλειστικά σε ενήλικες (18+).
+</div>
 
 <div style="display:flex; justify-content:center; align-items:center; gap:1rem; margin-bottom:1rem;">
-  <img src="logo_min.png" alt="Icon" style="width:200px; height:200px;">
+  <img src="logo_min.png" alt="Icon" style="width:200px; height:200px; animation: spin 20s linear infinite;">
 </div>
+
+<style>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+</style>
+
 
 <button class="language-button" onclick="window.location.href='index_en.html'">
   <img src="eng.png" alt="English">
@@ -93,18 +142,24 @@
 
 <div style="display:flex; justify-content:center; align-items:center; gap:1rem; margin-bottom:1rem;">
   <img src="cannabis-icon.png" alt="Icon" style="width:40px; height:40px;">
-  <h1 style="
-    text-align: center;
-    font-family: 'Freckle Face', cursive;
-    font-size: 3rem;
-    color: rgb(14, 38, 5);
-    -webkit-text-stroke: 2px black;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-    line-height: 1.2;
-    margin:0;
-  ">
-    CANNABIS HERCULES <br>Βιολογικά Προϊόντα Κάνναβης
-  </h1>
+<h1 style="
+  font-family:'GFS Neohellenic', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
+">
+  CANNABIS HERCULES <br>Βιολογικά Προϊόντα Κάνναβης
+</h1>
   <img src="cannabis-icon.png" alt="Icon" style="width:40px; height:40px;">
 </div>
 
@@ -117,36 +172,77 @@
 
 
 
-<h2>Τα Προϊόντα μας</h2>
+<h2 style="
+  font-family:'GFS Neohellenic', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
+">Τα Προϊόντα μας</h2>
   <div class="product-list">
     <div class="product" style="margin-bottom:2rem;">
-      <img src="trima.png" alt="Προϊόν 1" style="width:100%; border-radius:6px;" />
+
       <h3>Tρίμα αποξηραμένου ανθού 30γρ. Ποικιλιών enectarol dioika88 futura 86</h3>
+<div class="thumbs">
+  <img src="p1.png">
+</div>
 	  <p class="price">Τιμή: 10€</p>
       <p>Ξηρή ύλη με χαρακτήρα: τρίμα αποξηραμένου ανθού 30 g από ποικιλίες Enectarol, Dioika 88 και Futura 86. Ένα μίγμα γήινων αρωμάτων και ήπιας βοτανικής δύναμης, κομμένο για όσους θέλουν καθαρή πρώτη ύλη χωρίς φανφάρες — μόνο το άρωμα, η υφή και η ήρεμη ευθυγράμμιση που φέρνει.</p>
     </div>
     <div class="product" style="margin-bottom:2rem;">
-      <img src="product2.jpg" alt="Προϊόν 2" style="width:100%; border-radius:6px;" />
+	
       <h3>90 δισκία σπιρουλίνας με κάνναβη 30γρ</h3>
+<div class="thumbs">
+  <img src="p2.png">
+</div>
 	  <p class="price">Τιμή: 10€</p>
       <p>Μικρά πράσινα βόλια ευεξίας: 90 δισκία σπιρουλίνας ενισχυμένα με κάνναβη, σε σύνολο 30 g. Μια συμπυκνωμένη δόση φυτικής δύναμης, πλούσια σε θρεπτικά στοιχεία, φτιαγμένη για στιγμές που θες να δώσεις στο σώμα σου κάτι καθαρό, απλό και ουσιαστικό.</p>
     </div>
     <div class="product" style="margin-bottom:2rem;">
-      <img src="product3.jpg" alt="Προϊόν 3" style="width:100%; border-radius:6px;" />
       <h3>Βάμα κάνναβης 100ml περιεκτικότητας 5% - CBD</h3>
+<div class="thumbs">
+  <img src="p3.png">
+</div>
 	  <p class="price">Τιμή: 5€</p>
       <p>Ένα μικρό μπουκάλι γαλήνης: βάμα κάνναβης 100 ml με περιεκτικότητα 5% CBD. Καθαρό, διαυγές εκχύλισμα που στάζει αργά τη δική του ηρεμία, φτιαγμένο για στιγμές όπου θέλεις να κατεβάσεις τον θόρυβο και να αφήσεις το σώμα να βρει ξανά τον ρυθμό του.</p>
     </div>
     <div class="product" style="margin-bottom:2rem;">
-      <img src="product4.jpg" alt="Προϊόν 4" style="width:100%; border-radius:6px;" />
+
       <h3>Κεραλοιφή κάνναβης 30γρ</h3>
+<div class="thumbs">
+  <img src="p4.png">
+</div>
 	  <p class="price">Τιμή: 5€</p>
       <p>Μια μικρή χούφτα ανακούφισης: κεραλοιφή κάνναβης 30 g, πλούσια και ήρεμη στην αφή, φτιαγμένη για δέρμα που διψά. Λιώνει αργά στη θερμοκρασία του σώματος, αφήνοντας μια λεπτή, βοτανική ζεστασιά που μαλακώνει ξηρές επιδερμίδες και τις φέρνει πίσω στην ελαστικότητά τους.</p>
     </div>
   </div>
 
   <div class="bio">
-    <h2>Σχετικά με εμάς και τα Προιόντα μας</h2>
+    <h2 style="
+  font-family:'GFS Neohellenic', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
+">Σχετικά με εμάς και τα Προιόντα μας</h2>
 <p>Καλλιεργούμε <strong>φαρμακευτική κάνναβη Sattiva</strong>, με φυσικές μεθόδους και χωρίς χημικά, σε ένα μικρό κτήμα στην Ηράκλεια Σερρών κοντά στη λίμνη Κερκίνη. Με τη συνεργασία γεωπόνων και εξειδικευμένων ινστιτούτων, παράγουμε τσάι κάνναβης υψηλής καθαρότητας, πλούσιο σε CBD και θρεπτικά στοιχεία, απαλλαγμένο από βαρέα μέταλλα και επιβλαβείς ουσίες. <strong>Με αγάπη και μεράκι συλλέγουμε και επεξεργαζόμαστε ανθούς και σπόρους</strong>, δημιουργώντας ασφαλή και απολαυστικά προϊόντα που προσφέρουν ηρεμία, ενίσχυση του ανοσοποιητικού και συνολική ευεξία.</p>
   
   <h3>Οφέλη από την κατανάλωση τσαγιού CBD</h3>
@@ -166,7 +262,22 @@
   
 <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ccc;"></div>
   
-<h2 style="margin-top:2rem;">Πού θα μας βρείτε</h2>
+<h2  style="
+  font-family:'GFS Neohellenic', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
+margin-top:2rem;">Πού θα μας βρείτε</h2>
 
 
 
@@ -204,7 +315,22 @@ width="430" height="300" style="border:1;" allowfullscreen="" loading="lazy" ref
 </div>
 
 <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ccc;">
-<h2>Παραγγελίες και μεταφορικά</h2>
+<h2 style="
+  font-family:'GFS Neohellenic', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
+">Παραγγελίες και μεταφορικά</h2>
 <p>Για παραγγελίες εποικηνωνήστε μαζί μου τηλεφωνικά ή με email.<br>
 Πληρωμή με:<br> 
 <li>Αντικαταβολή (έξτρα χρέωση 2€)
@@ -234,9 +360,22 @@ width="430" height="300" style="border:1;" allowfullscreen="" loading="lazy" ref
 ">
 
     <img src="iris-icon.png" alt="IRIS Payments" style="width:100px; height:50px;">
-<p>ΙΒΑΝ: GR00 0000 0000 0000 0000 0000 000<br>
-Τράπεζα: Mock Bank<br>
-Όνομα Δικαιούχου: Cannabis Hercules</p>
+
+<div style="
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 420px;
+">
+  <p style="margin-bottom: 1rem;">
+    Αφού επικοινωνήσετε μαζί μου, μπορείτε να σκανάρετε το QR για την πληρωμή.
+  </p>
+  <img src="iris-qr.png" alt="IRIS Payments" style="width:200px; height:200px; border-radius:8px;">
+</div>
+
 </div>
 </div>
 </body>

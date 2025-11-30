@@ -24,24 +24,46 @@
       border-radius: 10px;
       padding: 1rem;
       margin-bottom: 2rem;
-      background: linear-gradient(to bottom right, rgba(255,255,255,0.7), rgba(255,100,100,0.1));
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: linear-gradient(to bottom right, rgba(255,255,255,0.3), rgba(255,100,100,0.05));
+      box-shadow: 0 4px 10px rgba(0,0,0,0.55);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .product:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 15px rgba(0,0,0,0.2);
     }
-    .price {
-      margin-top: 0.8rem;
-      display: inline-block;
-      padding: 0.3rem 0.8rem;
-      font-weight: 600;
-      font-size: 1.05rem;
-      border: 1px solid #000;
-      border-radius: 6px;
-      background: rgba(0,0,0,0.05);
-    }
+.product .price {
+  margin-top: 0.8rem;
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 17px;
+
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#a4b0a5, #697d6b) padding-box,
+    linear-gradient(90deg, #ff0000, #ffff00, #009e00) border-box;
+
+  box-shadow: 0 0 6px rgba(0,0,0,0.9);
+
+  /* A touch of attitude */
+  color: #0c2005;
+  letter-spacing: 0.5px;
+}
+
+.thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.thumbs img {
+  max-width: 50%;
+  max-height: 500px;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
     .bio { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ccc; }
 
     .language-button {
@@ -76,9 +98,34 @@
   </style>
 </head>
 <body>
-<div style="display:flex; justify-content:center; align-items:center; gap:1rem; margin-bottom:1rem;">
-  <img src="logo_min.png" alt="Icon" style="width:200px; height:200px;">
+
+<div style="
+  width: 100%;
+  background: rgba(120,0,0,0.85);
+  color: #fff;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+">
+  This website is intended for adults only (18+).
 </div>
+
+<div style="display:flex; justify-content:center; align-items:center; gap:1rem; margin-bottom:1rem;">
+  <img src="logo_min.png" alt="Icon" style="width:200px; height:200px; animation: spin 20s linear infinite;">
+</div>
+
+<style>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+</style>
+
 
 <button class="language-button" onclick="window.location.href='index.html'">
   <img src="greek.png" alt="Greek">
@@ -88,14 +135,20 @@
   <img src="cannabis-icon.png" alt="Icon" style="width:40px; height:40px;">
 
 <h1 style="
-  text-align: center;
-  font-family: 'Freckle Face', cursive;
-  font-size: 3rem;
-  color: rgb(14, 38, 5);
+  font-family:'Freckle Face', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
   -webkit-text-stroke: 2px black;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
 ">
   CANNABIS HERCULES <br>Organic Cannabis Products
 </h1>  
@@ -105,40 +158,109 @@
 <img src="logo-bg.jpg" alt="Logo" style="width:100%; max-width:480px; display:block; margin:0 auto 1rem auto;" />
 <p style="text-align:center;">Naturally grown, pure, rich in CBD.</p>
 
-<h2>Our Products</h2>
+<h2 style="
+  font-family:'Freckle Face', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
+">Our Products</h2>
 <div class="product-list">
   <div class="product">
-    <img src="trima.png" alt="Product 1" style="width:100%; border-radius:6px;" />
     <h3>Dried Flower Trim 30g – Enectarol, Dioika88, Futura86</h3>
+	<div class="thumbs">
+  <img src="p1.png">
+</div>
     <p class="price">Price: 10€</p>
     <p>Dry flower trim 30 g from Enectarol, Dioika88, and Futura86 varieties. A mix of earthy aromas and gentle herbal strength, cut for those who want clean raw material — just aroma, texture, and calm alignment it brings.</p>
   </div>
   <div class="product">
-    <img src="product2.jpg" alt="Product 2" style="width:100%; border-radius:6px;" />
     <h3>90 Spirulina & Cannabis Tablets 30g</h3>
+<div class="thumbs">
+  <img src="p2.png">
+</div>
     <p class="price">Price: 10€</p>
     <p>Small green wellness bullets: 90 spirulina tablets enriched with cannabis, total 30 g. A concentrated dose of plant power, rich in nutrients, crafted for moments when you want something pure and essential for your body.</p>
   </div>
   <div class="product">
-    <img src="product3.jpg" alt="Product 3" style="width:100%; border-radius:6px;" />
     <h3>Cannabis Tincture 100ml – 5% CBD</h3>
+<div class="thumbs">
+  <img src="p3.png">
+</div>
     <p class="price">Price: 5€</p>
     <p>A small bottle of calm: 100 ml cannabis tincture with 5% CBD. Clear extract that drips slowly, perfect for moments you want to lower the noise and let your body find its rhythm again.</p>
   </div>
   <div class="product">
-    <img src="product4.jpg" alt="Product 4" style="width:100%; border-radius:6px;" />
     <h3>Cannabis Balm 30g</h3>
+<div class="thumbs">
+  <img src="p4.png">
+</div>
     <p class="price">Price: 5€</p>
     <p>A small handful of relief: 30 g cannabis balm, rich and gentle to the touch, made for skin that thirsts. Melts slowly with body heat, leaving a subtle, herbal warmth that softens dry skin and restores elasticity.</p>
   </div>
 </div>
 
 <div class="bio">
-  <h2>About Me</h2>
-  <p>We cultivate medicinal Sativa cannabis of the Futura variety using natural methods without chemicals on a small farm in Iraklia Serres near Lake Kerkini. Collaborating with agronomists and specialized institutes, we produce high-purity cannabis tea, rich in CBD and nutrients, free from heavy metals and harmful substances. With love and care, we harvest and process flowers and seeds, creating a safe and enjoyable product that provides relaxation, immune support, and overall wellness.</p>
+  <h2 style="
+    font-family:'Freckle Face', sans-serif;
+    font-size:3rem;
+    font-weight:700;
+    color:#0e2605;
+    text-align:center;
+    -webkit-text-stroke: 2px black;
+    letter-spacing:2px;
+    text-shadow:
+        2px 2px 0px #ff0000,
+        -2px -2px 0px #ffff00,
+        0px 0px 6px rgba(0,0,0,0.7);
+    transform: rotate(-1deg);
+    margin:0;
+    line-height:1.2;
+  ">About Us & Our Products</h2>
+
+  <p>We cultivate <strong>medicinal Sativa cannabis</strong> using natural, chemical-free methods on a small farm in Iraklia Serres near Lake Kerkini. In collaboration with agronomists and specialized institutes, we produce high-purity cannabis tea rich in CBD and nutrients, free from heavy metals and harmful substances. <strong>With care and dedication, we harvest and process flowers and seeds</strong>, creating safe and enjoyable products that offer relaxation, immune support, and overall wellbeing.</p>
+
+  <h3>The Benefits of Drinking CBD Tea</h3>
+
+  <p>Research shows that feeding your endocannabinoid system with <strong>non-toxic, non-addictive cannabinoids</strong> strengthens your overall health. Cannabis tea can help with:</p>
+
+  <li>Relaxation & calmness</li>
+  <li>Improved sleep</li>
+  <li>Pain and inflammation relief</li>
+  <li>Digestion & nausea reduction</li>
+  <li>Immune system support</li>
+  <li>General wellness and balance</li>
 </div>
 
-<h2 style="margin-top:2rem;">Where to Find Us</h2>
+<div style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ccc;"></div>
+
+<h2 style="
+  font-family:'Freckle Face', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
+  margin-top:2rem;
+">Where to Find Us</h2>
+
 <div style="
   display: grid;
   grid-template-columns: auto 1fr;
@@ -171,7 +293,22 @@ width="430" height="300" style="border:1;" allowfullscreen="" loading="lazy" ref
 </div>
 
 <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ccc;">
-<h2>Orders and Shipping</h2>
+<h2 style="
+  font-family:'Freckle Face', sans-serif;
+  font-size:3rem;
+  font-weight:700;
+  color:#0e2605;
+  text-align:center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing:2px;
+  text-shadow:
+      2px 2px 0px #ff0000,
+      -2px -2px 0px #ffff00,
+      0px 0px 6px rgba(0,0,0,0.7);
+  transform: rotate(-1deg);
+  margin:0;
+  line-height:1.2;
+">Orders and Shipping</h2>
 <p>For orders, please contact us by phone or email.<br>
 Payment methods:<br> 
 <li>Cash on Delivery (extra charge €2)
@@ -202,9 +339,23 @@ Shipping options:</p>
 ">
 
     <img src="iris-icon.png" alt="IRIS Payments" style="width:100px; height:50px;">
-<p>IBAN: GR00 0000 0000 0000 0000 0000 000<br>
-Bank: Mock Bank<br>
-Account Holder: Cannabis Hercules</p>
+<div style="
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 420px;
+">
+  <p style="margin-bottom: 1rem;">
+    After contacting me, you can scan the QR code to complete your payment.
+  </p>
+  <img src="iris-qr.png" alt="IRIS Payments" style="width:200px; height:200px; border-radius:8px;">
+</div>
+
+
+
 </div>
 </div>
 
