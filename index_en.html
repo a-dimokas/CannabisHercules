@@ -95,9 +95,78 @@
       .product .price { font-size: 1rem; padding: 0.2rem 0.5rem; }
       img { max-width: 100%; height: auto; }
     }
+	
+	.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 2.4s ease;
+}
+
+/* --- Intro Content --- */
+#intro-overlay .intro-content {
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: introFade 2.8s ease forwards;
+}
+
+#intro-overlay img {
+  width: 340px;
+  height: 340px;
+  margin-bottom: 1rem;
+}
+
+@keyframes introFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* --- When hidden --- */
+#intro-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
   </style>
 </head>
 <body>
+<div id="intro-overlay">
+  <div class="intro-content">
+    <img src="logo_min_alt.png" alt="Logo">
+    <p style="font-family:'Freckle Face', sans-serif;
+  font-size:2rem;
+  font-weight:700;
+  text-align:center;
+  -webkit-text-stroke: 1px black;
+  letter-spacing:0px;
+  margin:0;
+  line-height:1.2;">Organic Cannabis Products from Irakleia Greece</p>
+  </div>
+</div>
+
 
 <div style="
   width: 100%;
@@ -131,10 +200,10 @@
   <img src="greek.png" alt="Greek">
   Ελληνικά
 </button>
-<div style="display:flex; justify-content:center; align-items:center; gap:1rem; margin-bottom:1rem;">
+<div  class="reveal" style="display:flex; justify-content:center; align-items:center; gap:1rem; margin-bottom:1rem;">
   <img src="cannabis-icon.png" alt="Icon" style="width:40px; height:40px;">
 
-<h1 style="
+<h1  class="reveal" style="
   font-family:'Freckle Face', sans-serif;
   font-size:3rem;
   font-weight:700;
@@ -155,10 +224,10 @@
 <img src="cannabis-icon.png" alt="Icon" style="width:40px; height:40px;">
 </div>
 
-<img src="logo-bg.jpg" alt="Logo" style="width:100%; max-width:480px; display:block; margin:0 auto 1rem auto;" />
-<p style="text-align:center;">Naturally grown, pure, rich in CBD.</p>
+<img  class="reveal" src="logo-bg.jpg" alt="Logo" style="width:100%; max-width:480px; display:block; margin:0 auto 1rem auto;" />
+<p  class="reveal" style="text-align:center;">Naturally grown, pure, rich in CBD.</p>
 
-<h2 style="
+<h2  class="reveal" style="
   font-family:'Freckle Face', sans-serif;
   font-size:3rem;
   font-weight:700;
@@ -174,7 +243,7 @@
   margin:0;
   line-height:1.2;
 ">Our Products</h2>
-<div class="product-list">
+<div  class="reveal" class="product-list">
   <div class="product">
     <h3>Dried Flower Trim 30g – Enectarol, Dioika88, Futura86</h3>
 	<div class="thumbs">
@@ -209,8 +278,9 @@
   </div>
 </div>
 
+<div  class="reveal">
 <div class="bio">
-  <h2 style="
+  <h2 class="reveal" style="
     font-family:'Freckle Face', sans-serif;
     font-size:3rem;
     font-weight:700;
@@ -240,10 +310,11 @@
   <li>Immune system support</li>
   <li>General wellness and balance</li>
 </div>
+  </div>
 
 <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ccc;"></div>
 
-<h2 style="
+<h2 class="reveal"  style="
   font-family:'Freckle Face', sans-serif;
   font-size:3rem;
   font-weight:700;
@@ -261,7 +332,7 @@
   margin-top:2rem;
 ">Where to Find Us</h2>
 
-<div style="
+<div class="reveal"  style="
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0.5rem 1rem;
@@ -287,13 +358,13 @@
   <img src="insta.png" alt="Instagram" style="width:20px; height:20px;">
   <a href="https://www.instagram.com/rastaja69/" target="_blank" style="color:black; text-decoration:none;">@rastaja69</a>
 </div>
-<div style="display:flex; justify-content:center; margin:0 auto;">
+<div class="reveal"  style="display:flex; justify-content:center; margin:0 auto;">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d187.6804507966435!2d23.282208676090917!3d41.1806271585236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a99b283ea98db3%3A0xdfb787c09f33e0bc!2zzprOkc6kzqPOkc6SzpHOms6XzqMgzpnOkc6azqnOks6fzqM!5e0!3m2!1sel!2sgr!4v1764417041818!5m2!1sel!2sgr" 
 width="430" height="300" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
-<div style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ccc;">
-<h2 style="
+<div class="reveal"  style="margin-top:3rem; padding-top:2rem; border-top:1px solid #ccc;">
+<h2 class="reveal"  style="
   font-family:'Freckle Face', sans-serif;
   font-size:3rem;
   font-weight:700;
@@ -321,7 +392,7 @@ Shipping options:</p>
 <br>
 
 
-<div style=" padding-top:2rem; border-top:1px solid #ccc;">
+<div class="reveal"  style=" padding-top:2rem; border-top:1px solid #ccc;">
 
 <div style="
   display: grid;
@@ -358,11 +429,37 @@ Shipping options:</p>
 
 
 
-
 </div>
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");   // fade in
+      } else {
+        entry.target.classList.remove("active"); // fade out only when fully gone
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: "600px 0px -10% 0px" 
+    // meaning: keep it "active" until bottom of element is WAY outside viewport
+  });
+
+  reveals.forEach(el => observer.observe(el));
+});
+</script>
+
+<script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("intro-overlay").classList.add("fade-out");
+  }, 1800);
+});
+</script>
 </body>
 </html>
-
-
